@@ -32,7 +32,7 @@ test:
     - pytest
   commands:
     - pip check
-    - pytest -v test/test1.py test/test2.py test/test3.py
+    - pytest -v test/test1.py test/test2.py test/test3.py test/test4.py
 
 about:
   home: https://www.ultimate.com/phil/python/#jsonpath
