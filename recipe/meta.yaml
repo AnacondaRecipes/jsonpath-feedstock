@@ -1,5 +1,5 @@
 {% set name = "jsonpath" %}
-{% set version = "0.82" %}
+{% set version = "0.82.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,38 +7,43 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 46d3fd2016cd5b842283d547877a02c418a0fe9aa7a6b0ae344115a2c990fef4
+  sha256: d87ef2bcbcded68ee96bc34c1809b69457ecec9b0c4dd471658a12bd391002d1
 
 build:
-  noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
 
 test:
+  source_files:
+    - test
   imports:
     - jsonpath
   requires:
+    - pip
     - pytest
-  source_files:
-    - test
   commands:
-    - pytest test/test1.py test/test2.py test/test3.py
+    - pip check
+    - pytest -v test/test1.py test/test2.py test/test3.py
 
 about:
-  home: https://pypi.org/project/jsonpath
+  home: https://www.ultimate.com/phil/python/#jsonpath
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: A port of the Perl, and JavaScript versions of JSONPath
+  summary: An XPath for JSON
+  description: |
+    A port of the Perl, and JavaScript versions of JSONPath
   doc_url: https://goessner.net/articles/JsonPath/
-  dev_url: http://www.ultimate.com/phil/python/#jsonpath
+  dev_url: https://www.ultimate.com/phil/python/#jsonpath
 
 extra:
   recipe-maintainers:
