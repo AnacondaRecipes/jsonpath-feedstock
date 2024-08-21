@@ -46,7 +46,7 @@ about:
   license_family: MIT
   # conda-forge created LICENSE.txt but the actual license statement
   # is in jsonpath.py
-  license_file: jsonpath.py
+  license_file: LICENSE.txt
   summary: An XPath for JSON
   description: |
     A port of the Perl, and JavaScript versions of JSONPath
