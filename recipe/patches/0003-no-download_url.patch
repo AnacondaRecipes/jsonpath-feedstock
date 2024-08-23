@@ -1,0 +1,11 @@
+diff -ruN a/setup.py b/setup.py
+--- a/setup.py	2017-04-28 02:30:42.000000000 +0100
++++ b/setup.py	2024-08-23 14:24:00.588677178 +0100
+@@ -24,7 +24,6 @@
+       author="Phil Budne",
+       author_email="phil@ultimate.com",
+       url=url,
+-      download_url=download_url,
+       py_modules=['jsonpath'],
+       classifiers=[
+         # http://pypi.python.org/pypi?:action=list_classifiers

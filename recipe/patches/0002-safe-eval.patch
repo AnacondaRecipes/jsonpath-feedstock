@@ -1,0 +1,19 @@
+--- a/test/test2.py	2018-10-27 21:03:33.000000000 +0100
++++ b/test/test2.py	2024-08-19 11:52:40.835840892 +0100
+@@ -6,6 +6,7 @@
+ import sys
+ import jsonpath
+ import re
++import ast
+ 
+ # For python3 portability
+ if sys.version_info[0] == 3:
+@@ -206,7 +207,7 @@
+ 
+ def fetch(obj, path):
+     str = "obj" + path[1:]
+-    return eval(str)
++    return ast.literal_eval(str)
+ 
+ def test_it():
+     n = 0
