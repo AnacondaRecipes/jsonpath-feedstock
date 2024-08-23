@@ -11,6 +11,7 @@ source:
   patches:
     - patches/0001-rm-test-jsonpath-py.patch
     - patches/0002-safe-eval.patch
+    - patches/0003-no-download_url.patch
 
 build:
   number: 0
